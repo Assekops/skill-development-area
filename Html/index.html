@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Area</title>
+    <link rel="stylesheet" href="../CSS/styles.css" />
+  </head>
+  <body>
+    <!-- <div class="parent">
+      <img src="../images/education1.png" class="child" /> Lorem ipsum dolor sit
+      amet consectetur adipisicing elit. Eum non velit ab fugit rerum optio
+      nesciunt fuga quaerat odit molestias accusantium aliquid, earum officiis
+      voluptates consequuntur quia distinctio. Ex, iusto?
+      <span title="Assekops">👨‍💻👨‍💻</span>
+    </div> -->
+    <div class="container">
+      <textarea class="story"></textarea><br />
+      <button id="set-text" type="button">Set Text Content</button>
+      <button id="clear-text" type="button">Clear Text Content</button>
+    </div>
+    <script>
+      const story = document.body.querySelector('.story');
+      const setText = document.body.querySelector('#set-text');
+      setText.addEventListener('click', () => {
+        story.textContent = 'It was a dark and stormy night.';
+      });
+
+      const clearText = document.body.querySelector('#clear-text');
+      clearText.addEventListener('click', () => {
+        story.textContent = '';
+      });
+    </script>
+  </body>
+</html>
