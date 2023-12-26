@@ -1510,22 +1510,38 @@ Finally call the function as `animalCan()` to see the output on the console.*/
 // }
 
 //palendrom
-var letters = [];
-var word = 'A man, a plan, a canal, Panama';
-var reverseWord = '';
+// var letters = [];
+// var word = 'A man, a plan, a canal, Panama';
+// var reverseWord = '';
 
-//put letters of the word into stack
-for (i = 0; i < word.length; i++) {
-  letters.push(word[i]);
+// //put letters of the word into stack
+// for (i = 0; i < word.length; i++) {
+//   letters.push(word[i]);
+// }
+
+// //pop off the stack in reverse order
+// for (var i = 0; i < word.length; i++) {
+//   reverseWord += letters.pop();
+// }
+
+// if (reverseWord === word) {
+//   console.log(`${word} is Palendrome`);
+// } else {
+//   console.log(`${word} is not a Palendrome`);
+// }
+
+function reverseArray(arr) {
+  var length = arr.length;
+  var middle = Math.floor(length / 2);
+  for (let i = 0; i < middle; i++) {
+    var temp = arr[i];
+    arr[i] = arr[length - 1 - i];
+    arr[length - 1 - i] = temp;
+  }
+  return arr;
 }
 
-//pop off the stack in reverse order
-for (var i = 0; i < word.length; i++) {
-  reverseWord += letters.pop();
-}
-
-if (reverseWord === word) {
-  console.log(`${word} is Palendrome`);
-} else {
-  console.log(`${word} is not a Palendrome`);
-}
+let arr = [1, 2, 3, 4, 5];
+//reverseArray = reverseArray(arr);
+console.log(reverseArray(arr));
+//Leet
