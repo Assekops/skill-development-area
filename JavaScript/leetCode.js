@@ -316,7 +316,47 @@
 // const cancelFn3 = cancellable(fn3, args3, t3);
 // setTimeout(cancelFn3, cancelTimeMs3);
 
-//Leetcode 2690 Infinite Method Object
+//2690-Leetcode: Infinite Method Object
 //Write a method that returns Infinite method object
 const createInfiniteObject = () =>
   new Proxy({}, { get: (_, prop) => () => prop });
+
+//2758-Leetcode: Next day
+Date.prototype.nextDay = function () {
+  const today = new Date(this.getTime());
+  today.setDate(today.getDate() + 1);
+  return today.toISOString().split('T')[0];
+};
+
+//2794. Create Object from Two Arrays
+/**
+ * @typedef {null | boolean | number | string | JSONValue[] | { [key: string]: JSONValue }} JSONValue
+ */
+
+/**
+ * Create an object from arrays of keys and values.
+ * @param {JSONValue[]} keysArr - The array of keys.
+ * @param {JSONValue[]} valuesArr - The array of values.
+ * @returns {Record<string, JSONValue>} - The created object.
+ */
+// function createObject(keysArr, valuesArr) {
+//   let ans = {};
+//   keysArr.forEach((key, index) => {
+//     let stringKey = typeof key === 'string' ? key : String(key);
+//     if (!(stringKey in ans)) {
+//       ans[stringKey] = valuesArr[index];
+//     }
+//   });
+//   return ans;
+// }
+
+function createObject(keysArr, valuesArr) {
+  let ans = {};
+  keysArr.forEach((key, index) => {
+    let stringKey = typeof key === 'string' ? key : String(key);
+    if (!(stringKey in ans)) {
+      ans[stringKey] = valuesArr[index];
+    }
+  });
+  return ans;
+}
